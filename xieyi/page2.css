@@ -1,0 +1,32 @@
+#wrap{overflow: hidden;}
+#content{
+	width: 100%;
+	overflow: hidden;
+	padding-top: 100px;
+	background-color:gray;
+}
+.background{
+	position: fixed;
+}
+#word{
+	padding-left: 10px;
+	position: relative;
+	width: 490px;	
+	overflow: hidden;
+}
+#wordHeader p{
+	font-size: medium;;
+	font-family: arial;
+	font-weight: lighter;
+	padding: 0 0 2em;
+	line-height: 2em;
+}
+#img img{
+	padding: 20px;
+	position: relative;
+	z-index: 100}
+@media only screen and (max-width: 640px) and (min-width: 320px){
+	#word{
+		width: 95%;
+	}
+}

@@ -1,0 +1,97 @@
+#header .active{
+	border:1px solid #fff;
+	border-radius: 8px;
+	color: white;
+}
+#content{
+	margin: 0 auto;
+	width: 980px;
+	/*height: 506px;*/
+	overflow: hidden;
+	font-family: "微软雅黑";
+}
+#content img{width: 588px;}
+#content a{
+	text-decoration: none;
+	color: black;
+}
+#content a p{
+	font-weight: bold;
+	padding-top: 0.5em;
+	font-size: 1.875em;
+	padding-bottom: 10px;
+}
+#content a span{
+	font-size: 0.975em;
+	line-height: 1.8em;
+}
+
+#con1{
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #e1e1e1;
+}
+#con1 img{
+	/*display: block;*/
+	float: left;
+}
+#con1>span{
+	float: left;
+	width: 19px;height: 159px;
+	background-color: gray;
+}
+#con1 a{ 
+	width: 350px;height: 159px;
+	float:right;
+}
+
+#con2 {
+	overflow: hidden;
+	border-bottom: 1px solid #e1e1e1;
+}
+#con2 img{
+	float: right;
+}
+#con2>span{
+	float: right;
+	width: 19px;height: 174px;
+	background-color: gray;
+}
+#con2 a{
+	width: 350px;height: 159px;
+	float:left;
+	text-align: right;
+}
+#con3 img{
+	float: left;
+}
+#con3>span{
+	float: left;
+	width: 19px;height: 174px;
+	background-color: gray;
+}
+#con3 a{
+	width: 333px;height: 81px;
+	float: right;
+	margin-right: 10px;
+}
+.pic2{display: none;}
+#con1:hover img{display: none;}
+#con1:hover .pic2{display: block;}
+#con1:hover .span1{background-color: gold;}
+#con2:hover img{display: none;}
+#con2:hover .pic2{display: block;}
+#con2:hover .span1{background-color: gold;}
+#con3:hover img{display: none;}
+#con3:hover .pic2{display: block;}
+#con3:hover .span1{background-color: gold;}
+
+@media only screen and (max-width: 640px){
+	#content{
+		width: 100%;
+	}
+}
+
+
+
+

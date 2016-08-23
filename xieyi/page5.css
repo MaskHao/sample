@@ -1,0 +1,149 @@
+*{margin: 0;padding: 0;font-family: Arial,sans-serif,Microsoft YaHei;}
+#wrap #headerbgc{
+	z-index: 100;
+	position: fixed;
+	width: 100%;
+	height: 4.2em;
+	overflow: hidden;
+}
+.content:nth-child(2n+1){background-color: #eee;}
+
+.content{height: 655px;}
+.cot{
+	position: relative;
+	max-width: 980px;	width: 75%;
+	height: 100%;
+	margin: 0 auto;
+
+}
+#wrap .word{
+	padding-top: 110px;
+}
+.word h2{
+	font-size: 1.4em;
+	color: #616161;
+	display: inline-block;
+	border:1px solid #616161;
+	border-radius: 6px;
+	padding: 0 1%;
+	margin-right: 5px;
+}
+.word h3{
+	font-size: 1.4em;
+	color: #616161;
+	display: inline-block;
+}
+.word span{
+	display: block;
+	width: 40%;
+	margin: 15px 0;
+	line-height: 1.4em;
+	/*在恰当的进行换行*/
+	word-break:normal;
+}
+.word div{
+	width: 40%;
+	overflow: hidden;
+}
+.word img{width: 33%;float: left;}
+.a1 .cot .pic1{
+	max-width: 350px;
+	position: absolute;
+	bottom: 0;
+	right: -50px;
+}
+.a2 .word{
+	z-index:10;
+	position: relative;
+}
+.a2 .word div{
+	width: 50%;
+	overflow: hidden;
+}
+.a2 .word div img{
+	width: 48%;
+	float: left;
+	margin-right:2%; 
+}
+.a2 .cot .pic2{
+	max-width: 350px;
+	position: absolute;
+	top: 0;right: -5px;
+}
+.a3 .word div{
+	width: 60%;
+	overflow: hidden;
+}
+.a3 .word div img{
+	width: 48%;
+	float: left;
+	margin-right:2%; 
+
+}
+.a3 .word{
+	position: relative;
+	top: 25%;
+	left: 35%;
+}
+.a3 .cot .pic3{
+	width: 40%;
+	max-width: 400px;
+	position: absolute;
+	bottom: 0;left: -10%;
+}
+.a4 .word{
+	z-index: 1;
+	position: absolute;
+	left: 10%;
+} 
+.a4 .word img{
+	width: 100%;
+	max-width: 215px;
+	margin-bottom: 8px;
+}
+.a4 .pic4a{
+	/*z-index: -1;*/
+	width: 40%;
+	max-width: 400px;
+	position: absolute;
+	left: -5%;
+}
+.a4 .pic4b{
+	/*width: 40%;*/
+	max-width: 400px;
+	position: absolute;
+	bottom: 0;right: -51px;
+}
+#wrap .a5 .word{
+	position: relative;
+	z-index: 10;
+}
+ .a5 .pic5{
+	max-width: 400px;
+	position: absolute;
+	right: 6px;top: 0;
+}
+
+@media screen and (max-width: 640px) and (min-width: 320px){
+	#wrapContent .content{height: 500px;}
+	.cot{width: 100%;}
+	#wrapContent .pic1{width: 270px;right: -80px;}
+	#wrapContent .pic2{width: 270px;right: -45px;}
+	.word{
+		/*z-index: 100;*/
+		padding-top: 20px;
+	}
+	#wrapContent .pic4b{
+		width: 290px;right: -91px;
+	}
+	#wrapContent .pic5{
+		width: 290px;right: -50px;
+	}
+}
+
+
+
+
+
+
+
