@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div  ng-controller="MyContro">
+        名称:
+        <input type="text" ng-model="name">
+        <span ng-bind="name"></span>
+    </div>
+
+
+    <div ng-controller="contro2">
+        <input type="text" ng-model="name">
+        <button ng-click="say()">say</button>
+    </div>
+
+
+</body>
+<script>
+    var app = angular.module("myApp",[]);
+    function myContro($scope){
+        $scope.name = 'asaa'
+    }
+    app.controller("MyContro",myContro);
+
+
+
+    function cont2($scope){
+        $scope.name = "jackchen",
+        $scope.say = function(){
+            alert("hello");
+        }
+    }
+    app.controller("contro2",cont2);
+</script>
+</html>

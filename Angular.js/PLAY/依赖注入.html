@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>依赖注入</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="mainApp" ng-controller="CalcController">
+        <p>输入一个数字: <input type="number" ng-model="number"></p>
+        <button ng-click="square()">X <sup>2</sup></button>
+        <p>结果{{result}}</p>
+    </div>
+    <script>
+        var mainApp = angular.module("mainApp",[]);
+        mainApp.config(function ($provide) {
+//            使用provider创建service定义一个方法用于计算两数乘积
+            $provide.provider("MathService", function () {
+                this.$get = function () {
+                    var factory = {};
+                    factory.multiply = function (a,b) {
+                        return a*b;
+                    }
+                    return factory;
+                };
+            });
+        });
+//创建value对象"defaultInput"并传递数据
+        mainApp.value("defaultInput",5);
+//        创建factory"MathService"用于两数乘积
+        mainApp.factory("MathService", function () {
+            var factory = {};
+            factory.multiply = function (a,b) {
+                return a*b;
+            }
+            return factory;
+        })
+//        在service中注入factory"MathService"
+        mainApp.service('CalcService',function(MathService){
+            this.square  = function (a) {
+                return MathService.multiply(a,a);
+            }
+        });
+//      将"defaultInput"注入到控制器
+        mainApp.controller("CalcController", function ($scope,CalcService,defaultInput) {
+            $scope.number = defaultInput;
+            $scope.result = CalcService.square($scope.number);
+            $scope.square = function(){
+                $scope.result = CalcService.square($scope.number);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            background-color: gold;
+        }
+    </style>
+    <script type="text/javascript" src="js/react.min.js"></script>
+    <script type="text/javascript" src="js/react-dom.js"></script>
+    <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/babel">
+    //1
+//    var Hellos = React.createClass({
+//        render: function () {
+//            return <div className="header">
+//                        <h1>hello,{this.props.name}</h1>
+//                        <p>你是谁</p>
+//                    </div>;
+//        }
+//    });
+//    ReactDOM.render(
+//            <Hellos name='KKK' />,
+//            document.getElementById("test")
+//    );
+
+
+
+//2  子标签内容展示
+//    var Hellos = React.createClass({
+//        render: function () {
+//            return  <ol>
+//                {
+//                    React.Children.map(this.props.children, function (child) {
+//                        return <li>{child}</li>;
+//                    })
+//                }
+//                </ol>
+//        }
+//    });
+//    ReactDOM.render(
+//        <Hellos >
+//            <span>hello</span>
+//            <span>world</span>
+//        </Hellos >,
+//        document.getElementById("test")
+//    );
+
+//    3 验证组件的属性是否符合要求
+//    var Hellos = React.createClass({
+//        propTypes:{
+//            title:React.PropTypes.string.isRequired,
+//        },
+//        render:function(){
+//            var _this = this;
+//            return  <ol >{
+//                    React.Children.map(this.props.children, function (child) {
+//                        return <li>{_this.props.title}{child}</li>;
+//                    })
+//                }
+//                </ol>
+//        }
+//    });
+//    ReactDOM.render(
+//            <Hellos title="AAA">
+//                <span>hello</span>
+//                <span>world</span>
+//            </Hellos >,
+//            document.getElementById("test")
+//        );
+
+
+//    3 getDefaultProps 方法可以用来设置组件属性的默认值
+//    var Hellos = React.createClass({
+//        getDefaultProps: function () { 
+//            return { 
+//                title:"hello world" 
+//            } 
+//        },
+//        render:function(){
+//            var _this = this;
+//            return  <ol >{
+//                    React.Children.map(this.props.children, function (child) {
+//                        return <li>{_this.props.title}{child}</li>
+//                    })
+//                }
+//                </ol>
+//        }
+//    });
+//    ReactDOM.render(
+//            <Hellos >
+//                <span>hello</span>
+//                <span>world</span>
+//            </Hellos >,
+//            document.getElementById("test")
+//        );
+
+//4
+    var Hellos = React.createClass({
+        propTypes:{
+            title: React.PropTypes.string.isRequired
+        },
+
+        getDefaultProps: function () { 
+            return { 
+                title:"hello world" ,
+                name:"ABC"
+            } 
+        },
+        onc:function(){
+          this.refs.myUl.style.background = "red";
+        },
+        render:function(){
+            var _this = this;
+            return  <ol ref="myUl">{
+                        React.Children.map(this.props.children, function (child) {
+                        return <li onClick={_this.onc}>{_this.props.title}{_this.props.name}{child}</li>;
+                    })
+                }</ol>
+        }
+    });
+    ReactDOM.render(
+    <Hellos >
+            <span>hello</span>
+            <span>world</span>
+            </Hellos >,
+            document.getElementById("test")
+    );
+</script>
+</html>

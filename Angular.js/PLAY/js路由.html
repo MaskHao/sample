@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路由</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-app="routingDemoApp">
+    <h2>AngularJS 路由应用</h2>
+    <ul>
+        <li><a href="#/">FirstPage</a></li>
+        <li><a href="#/computers">computers</li>
+        <li><a href="#printers">printers</a></li>
+        <li><a href="#others">others</a></li>
+    </ul>
+    <!--该div内的HTML内容会根据路由的变化而变化-->
+    <div ng-view></div>
+</body>
+<script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+<script>
+    var app = angular.module("routingDemoApp",["ngRoute"]);
+
+//    config 函数用于配置路由规则,AngularJS $routeProvider 用来定义路由规则。
+//    通过configAPI,请求把$routeProvider注入配置函数,并使用$routeProvider.whenAPI定义我们的路由规则
+    app.config(["$routeProvider", function ($routeProvider) {
+
+//        $routeProvider为我们提供了when(path,object)&otherwise(object)   URL/URL正则规则  路由器配置对象
+        $routeProvider.when('/',{template:'首页页面'})
+        .when('/computers',{template:'电脑页面'})
+        .when('/printers',{template:'打印机页面'})
+        .otherwise({redirectTo:'/'});
+    }]);
+
+/*
+    $routeProvider.when(url, {
+                template: string,         //在ng-view中插入简单的HTML内容
+                templateUrl: 'views/computers.html',//插入html模板文件   会从服务端获取view/computers.html内容
+                controller: string, function 或 array,  //在当前模板上执行controller函数,生成新的scope
+                controllerAs: string,                   //为controller指定别名
+                redirectTo: string, function,           //重定向的地址
+                resolve: object<key, function>          //指定当前的controller所依赖的其他模块
+    });
+  */
+</script>
+</html>

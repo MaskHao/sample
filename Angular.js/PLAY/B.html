@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+    过滤器中使用服务:
+    <!--<h1>{{255|myFormat}}</h1>-->
+
+    <!--获取数组[255,251,200]使用过滤器-->
+    <!--<ul ng-controller="myCtrl">-->
+        <!--<li ng-repeat="x in counts">{{x| myFormat}}</li>-->
+    <!--</ul>-->
+
+    <ul ng-controller="AAAA">
+        <li ng-repeat="x in counts">{{x|changeNum}}</li>
+    </ul>
+
+</div>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+//    app.service("changeNumber", function () {
+//        this.functionA = function (x) {
+//            return x.toString(16);
+//        }
+//    });
+//    app.filter("myFormat", ["changeNumber", function (changeNumber) {
+//        return function (x) {
+//            return changeNumber.functionA(x);
+//        }
+//    }]);
+//    app.controller("myCtrl", function ($scope) {
+//        $scope.counts = [255,251,200];
+//    });
+
+</script>
+</html>

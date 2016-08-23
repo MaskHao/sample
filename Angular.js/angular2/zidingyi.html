@@ -1,0 +1,30 @@
+
+<!--创建指令-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <my-directive></my-directive>
+        <div my-directive=""></div>
+        <div class="my-directive"></div>
+    </div>
+
+</body>
+<script>
+    var app = angular.module("myApp",[]);
+    //myDirective驼峰命名法, 上用 "-"
+    app.directive("myDirective", function () {
+        return{
+//            template:"<h1>你个鳖孙儿</h1>"
+//             E可作为HTML元素使用,A作为HTML属性使用,C作为css类使用,M作为HTML注释使用
+            restrict:"AC",
+            templateUrl:"../header.html"
+        }
+    })
+</script>
+</html>

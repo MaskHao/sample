@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body>
+<!--<div ng-app="myApp" ng-controller="myCtrl" >-->
+    <!--&lt;!&ndash;<select  ng-model="name" ng-options="x for x in names"></select>&ndash;&gt;-->
+    <!--<select>-->
+        <!--<option ng-repeat="x in names">{{x}}</option>-->
+        <!--选中的是一个字符串-->
+    <!--</select>-->
+<!--</div>-->
+<!--<div ng-app="apps" ng-controller="myCtrl2">-->
+    <!--<select ng-model="selectedSite" ng-options="x.site for x in sites"></select>-->
+    <!--<h1>name:{{selectedSite.site}}</h1>-->
+    <!--<p>address:{{selectedSite.url}}</p>-->
+<!--</div>-->
+
+<div ng-app="app2" ng-controller="myCtrl3">
+    <!--<select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>-->
+    <select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars"></select>
+    <h1>你选择的是: {{selectedCar.brand}}</h1>
+    <h2>模型: {{selectedCar.model}}</h2>
+    <h3>颜色: {{selectedCar.color}}</h3>
+</div>
+
+</body>
+<script>
+//    var app = angular.module("myApp", []);
+//    app.controller("myCtrl", function ($scope) {
+//        $scope.names = ["cool", "bad", "black"];
+//    });
+//    var app2 = angular.module("apps",[]);
+//    app2.controller("myCtrl2", function ($scope) {
+//        $scope.sites = [
+//            {site : "Google", url : "http://www.google.com"},
+//            {site : "Runoob", url : "http://www.runoob.com"},
+//            {site : "Taobao", url : "http://www.taobao.com"}
+//        ];
+//    });
+    var app3 = angular.module('app2', []);
+    app3.controller("myCtrl3", function ($scope) {
+        $scope.cars = {
+            car01 : {brand : "Ford", model : "Mustang", color : "red"},
+            car02 : {brand : "Fiat", model : "500", color : "white"},
+            car03 : {brand : "Volvo", model : "XC90", color : "black"}
+        }
+    });
+
+</script>
+</html>

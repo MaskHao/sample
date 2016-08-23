@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+        .active2{
+             color: gold;
+         }
+    </style>
+    <script type="text/javascript" src="js/react.min.js"></script>
+    <script type="text/javascript" src="js/react-dom.js"></script>
+    <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body>
+    <div id="test"></div>
+</body>
+<script type="text/babel">
+    //1
+//    ReactDOM.render(
+//    <div>
+//    <h1 className="active">吃馒头</h1>
+//            <p className="active2">word</p>
+//            </div>,
+//            document.getElementById("test")
+//    );
+
+
+//2
+    var arr = ["AA","BB","CC"];
+    ReactDOM.render(
+//        <ul>
+//        {
+//            arr.map(function (value, key) {
+//                return <li key = {key} > hellow, {value}!< / li >
+//            })
+//        }
+//        </ul>,
+
+            <h1>{arr}</h1>,
+        document.getElementById("test")
+    );
+
+
+
+</script>
+</html>

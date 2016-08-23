@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+<!--<div ng-controller="AA">-->
+    <!--<input type="text" ng-model="name">-->
+    <!--<aaa></aaa>-->
+<!--</div>-->
+
+<div ng-controller="BBB">
+    <h1>姓氏为{{lastname}}的家族</h1>
+    <ul>
+        <li ng-repeat="x in names">{{x}}  {{lastname}}</li>
+    </ul>
+</div>
+
+
+<div  ng-init="count=1;price=2">
+    数量 <input type="number" ng-model="count">
+    单价 <input type="number" ng-model="price">
+    <p>总价=<span ng-bind="(count*price|currency)"></span></p>
+</div>
+
+<!--URL-->
+<div ng-controller="CCC">
+    路径名:<span ng-bind="myurl"></span>
+</div>
+
+<div ng-controller="times">
+    <h1>现在时间是: <span ng-bind="thetime"></span></h1>
+</div>
+
+
+
+<!--自定义服务-->
+<div ng-controller="changeNumber">
+    <input type="text" ng-model="number" ng-change="numChange()">
+    的16进制是:{{hex}}
+</div>
+
+
+
+
+</body>
+<script>
+    var app = angular.module("myApp",[]);
+//    app.controller("AA", function ($scope) {
+//        $scope.name = "kk";
+//    });
+//    app.directive("aaa", function () {
+//        return{
+//            template: "<h1>adad</h1>"
+//        };
+//    });
+    app.controller("BBB",function($scope,$rootScope){
+        $scope.names = ["AA","BB","CC"];
+        $rootScope.lastname = "EEE";
+    });
+    app.controller("CCC",function($scope,$location){
+        $scope.myurl = $location.absUrl();
+    });
+    app.controller("times", function ($scope,$interval) {
+        $scope.thetime = new Date().toLocaleTimeString();
+        $interval(function () {
+                 $scope.thetime = new Date().toLocaleTimeString();
+        },1000);
+    });
+
+
+//    自定义服务转化为16进制
+    app.service("ChangeNum", function () {
+        this.changes = function(x){
+            return x.toString(16);
+        }
+    });
+    app.controller("changeNumber", function ($scope,ChangeNum) {
+        $scope.numChange = function(){
+            console.log($scope.number);
+            $scope.hex = ChangeNum.changes($scope.number);
+        }
+    })
+
+</script>
+</html>

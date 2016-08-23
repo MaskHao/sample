@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/react.min.js"></script>
+    <script type="text/javascript" src="js/react-dom.js"></script>
+    <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/babel">
+    var Hellos = React.createClass({
+        getInitialState: function () {
+            return {
+                users:[]
+            }
+        },
+
+        componentDidMount:function(){
+            var _this = this; 
+            $.get("http://localhost:9092/user?act=list",function (data){ 
+                 console.log(data); 
+                 _this.setState({ 
+                 users:data 
+                 }); 
+                 });
+        },
+
+
+        render: function () {
+            var users = this.state.users; 
+            console.log(users); 
+            return <table> { 
+                users.map(function (user,key){ 
+                return <tr key={key}><td>{user.firstname}</td><td>{user.lastname}</td></tr> 
+            }) 
+        } 
+            </table> 
+        }
+    });
+    ReactDOM.render(
+    <Hellos />,
+            document.getElementById("test")
+    );
+</script>
+</html>

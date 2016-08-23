@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>table</title>
+    <script src="../angular.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.5.0-beta.0/angular-sanitize.min.js"></script>
+
+    <style>
+        table, th , td  {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        table tr:nth-child(odd)	{
+            background-color: #f1f1f1;
+        }
+        table tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+    <table>
+        <!--使用orderBy过滤器-->
+        <tr ng-repeat="x in names | orderBy:'Country'">
+            <!--显示序号($index)-->
+            <td>{{$index+1}}</td>
+            <td ng-if="$odd" style="background-color: red">{{ x.Name }}</td>
+            <td  ng-if="$even">{{ x.Name }}</td>
+            <!--使用uppercase过滤器-->
+            <td>{{ x.Country |uppercase}}</td>
+
+        </tr>
+    </table>
+    <div ng-bind-html="content"></div>
+    <div ng- ng-init="switch=true">
+        <button ng-disabled="switch">button</button>
+        <input type="checkbox" ng-model="switch">按钮{{switch }}
+    </div>
+
+
+
+    <button ng-click="count=count+1" ng-init="count=0">点击增加数目</button>
+    <p>{{count}}</p>
+
+    <button ng-click="toggle()">{{changeSelect}}</button>
+    <div ng-hide="myVar">
+        <input type="text" ng-model="firstName">
+        <input type="text" ng-model="lastName">
+        name:{{firstName+""+lastName}}
+    </div>
+</div>
+
+<script>
+    var app = angular.module('myApp', ['ngSanitize']);
+    app.controller('customersCtrl', function($scope, $http) {
+        $http.get("table.php").success(function (response) {
+            $scope.content = response;
+            console.log(response);
+            $scope.names = response.records;
+
+            $scope.changeSelect = "隐藏";
+            $scope.firstName = "DOE";
+            $scope.lastName = "kk";
+            $flag = true;
+            $scope.toggle = function(){
+                $flag = !$flag;
+                $scope.myVar = !$scope.myVar;
+                if($flag==true){
+                    $scope.changeSelect = "隐藏";
+                }else {
+                    $scope.changeSelect = "显示";
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

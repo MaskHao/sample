@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body >
+    <div ng-app="myApp" ng-controller="myCtorl" ng-init="name='jac';num1='';num2=''">
+        <input type="text" ng-model="name">
+        {{name}}
+        <input type="text" ng-model="num1">
+        <input type="text" ng-model="num2">
+        {{num1+num2}}
+    </div>
+
+
+    <!--<div ng-app="" ng-init="num1='jac';num2='mod'">-->
+
+        <!--<input type="text" ng-model="num1">-->
+        <!--<input type="text" ng-model="num2">-->
+        <!--{{num1+""+num2}}-->
+    <!--</div>-->
+    <!---->
+    <!--<div  ng-init="person={name1:'AA',name2:'B'}">-->
+
+        <!--<input type="text" ng-model="person.name1">-->
+        <!--<input type="text" ng-model="person.name2">-->
+        <!--{{person.name1+person.name2}}-->
+    <!--</div>-->
+    <!--<div  ng-init="arr=[1,5,3]">-->
+
+        <!--<input type="text" ng-model="arr[0]">-->
+        <!--<input type="text" ng-model="arr[2]">-->
+        <!--{{arr[0]+arr[2]}}-->
+        <!--<p ng-bind="arr[0]+arr[2]"></p>-->
+        <!--&lt;!&ndash;<span ng-bind="arr[0]+arr[2]"></span>&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div ng-init="arr=[5,4,2]">-->
+        <!--<span ng-bind="arr[2]"></span>-->
+    <!--</div>-->
+
+
+<!--<div ng-init="name='AAA';cklick=false">-->
+    <!--<button ng-click="click =!click">显示隐藏</button>-->
+    <!--<div ng-hide="click">-->
+    <!--&lt;!&ndash;<div ng-show="!click">&ndash;&gt;-->
+        <!--<input type="text" ng-model="name">-->
+        <!--<span ng-bind="name"></span>-->
+    <!--</div>-->
+
+</div>
+</body>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller("myCtorl", function ($scope) {
+        $scope.num1 = angular.isNumber($scope.num1);
+        $scope.num2 = angular.isNumber($scope.num2);
+        console.log($scope.num1);
+        $scope.sum = $scope.num1 + $scope.num2;
+
+    })
+</script>
+</html>

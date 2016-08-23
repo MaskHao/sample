@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="myContro">
+        <div class="page-header">
+            <h1>USERS</h1>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>编辑</th>
+                <th>名</th>
+                <th>姓</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in users">
+                <td>
+                    <button class="btn btn-default" ng-click="showEdit($index)">
+                        <span class="glyphicon glyphicon-pencil"></span>编辑
+                    </button>
+                </td>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+        <hr>
+        <button class="btn btn-success" ng-click="showUser()">
+            <span class="glyphicon glyphicon-user"></span>创建新用户
+        </button>
+        <hr>
+        <h2 ng-show="createUser">创建新用户</h2>
+        <h2 ng-hide="createUser">编辑用户</h2>
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-1">姓</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" ng-model="firstName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-1">名</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" ng-model="lastName">
+                </div>
+            </div>
+
+            <div class="form-group" ng-show="createUser">
+                <label class="control-label col-sm-1">密码</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" ng-model="pass">
+                </div>
+            </div>
+            <div class="form-group" ng-show="createUser">
+                <label class="control-label col-sm-1">重输密码</label>
+                <div class="col-sm-11">
+                    <input type="text" class="form-control" ng-model="twopass">
+                </div>
+            </div>
+        </form>
+        <hr>
+        <form class="btn btn-success" ng-click="save()" ng-disabled="EditSave()">
+            <span class="glyphicon glyphicon-download-alt"></span>保存
+        </form>
+    </div>
+</body>
+<script>
+    var users = [
+        {firstname:'A1',lastname:"B1"},
+        {firstname:"A2",lastname:"B2"},
+        {firstname:"A3",lastname:"B3"}
+    ];
+    var app = angular.module("myApp",[]);
+    app.controller("myContro",function($scope,$http){
+
+//页面打开获取数据库传入数据     http://localhost:9092/login2.html
+        $http.get("/user?act=list").success(function (res) {
+            console.log(res);
+            $scope.users = res;
+        });
+
+
+//        $scope.users = users;
+        $scope.createUser = true;
+        function showUser(){
+            console.log("A");
+            reset();
+            $scope.createUser = true;
+        }
+        $scope.showUser = showUser;
+
+
+        function showEdit(index){
+            $scope.indexs = index;
+            console.log(index);
+            var item = $scope.users[index];
+            $scope.firstName = item.firstname;
+            $scope.lastName = item.lastname;
+            $scope.createUser = false;
+        }
+        $scope.showEdit = showEdit;
+
+        function reset(){
+            $scope.firstName = "";
+            $scope.lastName = "";
+            $scope.pass = "";
+            $scope.twopass = "";
+        }
+
+        function save(){
+            if($scope.createUser){
+                $scope.users.push({
+                    firstname:$scope.firstName,
+                    lastname:$scope.lastName
+                });
+//                $http.get("/user?act=update&first="+$scope.firstName+"&last="+$scope.lastName).success(function (res) {
+                $http.get("/user",{
+                    params:{
+                        act:"add",
+                        firstname:$scope.firstName,
+                        lastname:$scope.lastName,
+                        pass:$scope.pass
+                    }
+                }).success(function(res){
+                    console.log(res);
+//                    $scope.users = res;
+                    $scope.users.push(res);
+                });
+            }else {
+                console.log($scope.indexs);
+                var user = $scope.users[$scope.indexs];
+                user.firstname = $scope.firstName;
+                user.lastname = $scope.lastName;
+                $scope.createUser = true;
+                $http.get("/user",{
+                    params:{
+                        act:"change",
+                        firstname:user.firstname,
+                        lastname:user.lastname
+                    }
+                }).success(function (res) {
+                    console.log("修改成功");
+                    console.log(res);
+                })
+            }
+            reset();
+        }
+        $scope.save = save;
+
+        function EditSave(){
+            if($scope.createUser){
+//            创建新用户
+                var first = $scope.firstName;
+                var last = $scope.lastName;
+                var pass = $scope.pass;
+                var twopass = $scope.twopass;
+                if(first &&last&&pass&twopass&&twopass ==pass){
+                    return false;
+                }else {
+                    return true;
+                }
+            }else {
+//            编辑用户
+                var item = $scope.users[$scope.indexs];
+                if($scope.firstName !=item.firstname ||$scope.lastName !=item.lastname ){
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+        }
+        $scope.EditSave = EditSave;
+    });
+</script>
+</html>

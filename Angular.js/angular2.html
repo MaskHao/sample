@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .mouses{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body ng-app="">
+
+
+<div ng-init="name='AAA';click=false;mouse=true">
+    <button ng-click="click =!click">显示隐藏</button>
+    <div class="active" ng-show="click">
+        <input type="text" ng-model="name">
+        <span ng-bind="name"></span>
+    </div>
+    <!--<div class="inactive" ng-show="click">-->
+
+    <!--</div>-->
+    <div class="mouses" ng-hide="!mouse" ng-mousedown="mouse=!mouse"></div>
+</div>
+
+
+<div ng-init="arr=[5,4,6,3];arr2=[{name:'aa',pass:'123'},{name:'bb',pass:'456'}]">
+    <ul>
+        <li ng-repeat=" x in arr2">
+
+            <span ng-bind="x.name"></span>
+            <span ng-bind="x.pass"></span>
+        </li>
+    </ul>
+</div>
+
+<div ng-init="arr3={name:'aa',pass:'123',sex:'man'}">
+    <ul>
+        <li ng-repeat="(key,value) in arr3">
+
+            <span ng-bind="key"></span>
+            <span ng-bind="value"></span>
+        </li>
+    </ul>
+</div>
+
+
+<!--ng-class用于动态自定义dom元素的css class name-->
+
+</body>
+</html>

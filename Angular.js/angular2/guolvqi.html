@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myContro">
+        <input type="text" ng-model="num1">
+        <input type="text" ng-model="num2">
+        {{sum()|currency:"￥"}}
+        {{'HelloWorld'| uppercase}}
+        {{'HelloWorld'| lowercase}}
+
+        <div ng-init="arr=['AA','BB','CC']">
+            soso <input type="text" ng-model="name">
+            <ul>
+                <li ng-repeat="x in arr | filter:name "><span ng-bind="x"></span></li>
+            </ul>
+        </div>
+
+
+<!--排序-->
+        <div ng-init="arr2=[{name:'jj',sex:'man',age:15},{name:'DD',sex:'woman',age:25}]">
+            soso <input type="text" ng-model="name">
+            <ul>
+                <!--ture:倒序   orderBy:'name':true 根据名字排 -->
+                <li ng-repeat="x in arr2 | filter:name |orderBy:order:true"><span ng-bind="x.age"></span>{{x}}</li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller("myContro", function ($scope,$http) {
+//        $scope.sum = function () {
+//            return $scope.num1+$scope.num2;
+//        }
+
+        function sum(){
+            return $scope.num1+$scope.num2;
+        }
+        $scope.sum = sum;
+
+//        规则名称:order
+        $scope.order="age";
+    });
+</script>
+</html>

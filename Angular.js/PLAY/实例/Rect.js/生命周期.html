@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            background-color: gold;
+        }
+    </style>
+    <script type="text/javascript" src="js/react.min.js"></script>
+    <script type="text/javascript" src="js/react-dom.js"></script>
+    <script type="text/javascript" src="js/browser.min.js"></script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script type="text/babel">
+
+    var Hellos = React.createClass({
+        getInitialState: function () {
+            return {
+                liked:true,
+                value:"hello",
+                opacity:1.0
+            }
+        },
+//        compon
+        changes : function(event){
+//            target代表当前
+            this.setState({value:event.target.value});
+        },
+        componentDidMount:function(){
+          var times = setInterval(function () {
+//              this为Window所以要bind将this的指向改变
+              var opacity = this.state.opacity;
+              opacity -= 0.05;
+              if(opacity < 0.1){
+                  opacity = 1.0;}
+                  // 设置成初始状态
+              this.setState({ opacity :opacity });
+
+          }.bind(this),100);
+        },
+
+
+        render:function() {
+            var values = this.state.value;
+            return <div style={{opacity:this.state.opacity}}>
+            <input onChange={this.changes} type="text" value={values}/>
+                    <p>{values}</p>
+                    </div>
+        }
+    });
+    ReactDOM.render(
+    <Hellos />,
+            document.getElementById("test")
+    );
+</script>
+</html>
