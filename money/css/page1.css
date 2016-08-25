@@ -1,0 +1,188 @@
+*{margin: 0;	padding: 0; list-style: none;}
+#bg{width: 100%;height: 100%;}
+#wrap{
+	position: relative;
+}
+#tiaozhan{
+	position: absolute;
+	top:10%;left: 50%;
+	width: 90%;
+	height: 13%;
+	-webkit-animation:anni  1s linear both ; 
+	
+}
+@-webkit-keyframes anni{
+		0%		{
+			transform: translate(0,-70%);
+		}
+		100%	{
+			transform: translate(-50%,0);
+		}
+	}
+#shuqian{
+	position: absolute;
+	top: 22%;left: 5%;
+	width: 90%;
+	height: 20%;
+	-webkit-animation: cc 2s ; 
+}
+@-webkit-keyframes cc{
+		0%{
+			transition: -50%;
+			transform: rotate(15deg);
+		}
+		35%{
+			transition: -50%;
+			transform: rotate(-15deg);
+		}
+		65%{
+			transform: rotate(15deg);
+		}
+		100%{
+			transform: rotate(0deg);
+		}
+	}
+#kaishi{
+	position: absolute;
+	bottom: 20%;left: 32.5%;
+	width: 35%;height: 20%;
+	-webkit-animation: dd 4s infinite ; 
+}
+	@-webkit-keyframes dd{
+		25%{
+			opacity: 0.8;
+			transform: scale(0.8);
+		}
+		50%{
+			opacity: 1;
+			transform: scale(1);
+		}
+		75%{
+			opacity: 0.8;
+			transform: scale(0.8);
+		}
+		100%{
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+#shou{
+	position: absolute;
+	bottom: 24%;left: 57%;
+	width: 16%;height: 7%;
+	-webkit-animation: ee 4s infinite ; 
+}
+	@-webkit-keyframes ee{
+		0{
+			opacity: 0.5;
+		}
+		25%{
+			opacity: 1;
+		}
+		50%{
+			opacity: 0.5;
+		}
+		75%{
+			opacity: 1;
+		}
+		100%{
+			opacity: 0.5;
+		}
+	}
+#show{
+	position: absolute;
+	bottom: 8%;left: 10%;
+	width: 80%;height: 10%;
+	background:url(../img/四个按钮背景.png) no-repeat ;
+	background-size: 100% 100%;
+}
+#show  img{
+	width: 23%;height: 75%;
+	margin-top: 1.5%;
+	float: left;
+	margin-left: 1.5%;	
+}
+
+#form{
+	width: 100%;height: 100%;
+	position: absolute;
+	top: 0;
+	background: url(../img/填写资料框.png) no-repeat;
+	background-size: 100% 100%;
+	/*display: none;*/
+}
+#cha{
+	z-index: 2;
+	position: absolute;
+	top: 15%;right: 5%;
+}
+
+#form input{
+	width: 50%;height: 40px;
+	border:2px solid  #e33145;
+	border-radius: 6px;
+	background-color: #f2bb00;
+	font-size: 1.2em;
+	padding-left: 10px;
+}
+#name{
+	position: absolute;
+	top: 36%;left: 25%;
+}
+#phoneNumber{
+	position: absolute;
+	top: 44%;left: 25%;
+}
+#begin{
+	width: 40%;
+	position: absolute;
+	top: 53%;left: 30%;
+}
+
+.style{
+	position: absolute;
+	top: 0;left: 0;
+	display: none;
+}
+.style img:first-child{
+	width: 100%;
+}
+.cancelbtn{
+	position: absolute;
+	top: 15%;right: 5%;
+}
+
+
+/*排行榜*/
+#ul{
+	width: 60%;height:44%;
+	position: absolute;
+	top:30%;left:20% ;
+}
+#ul li{
+	font-size: 6vw;
+	width: 100%;height: 13%;
+	line-height: 20px;
+	border-bottom: 2px dashed black;
+	margin-top: 5%;
+}
+#ul li span:first-child{
+	display: inline-block;
+	width: 10%;height: 100%;
+	margin-right: 5%;
+	margin-left: 5%;
+}
+
+
+#ul li:first-child{
+	background: url(../img/1-8.png) no-repeat;
+	background-size: 10% 84%;
+}
+ #ul li:nth-child(2){
+	background: url(../img/1-7.png) no-repeat;
+	background-size: 10% 84%;
+}
+#ul li:nth-child(3){
+	background: url(../img/1-6.png) no-repeat;
+	background-size: 10% 84%;
+}

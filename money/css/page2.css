@@ -1,0 +1,82 @@
+*{margin: 0;padding: 0; }
+#bg{width: 100%;height: 100%;}
+#wrap{
+	position: relative;
+}
+.sh{
+	width: 70%;height: 20%;
+	position: absolute;
+	top: 12%;left: 15%;
+}
+#timeNumber{
+	position: absolute;
+	 top: 36%;right: 24%;
+	font-size: 7vw;
+}
+#money1{
+	left: 25%;
+}
+#money2{
+	left: 40%;
+}
+#money3{
+	left: 54%;
+}
+.moneyNumber{
+	position: absolute;
+	top: 36%;
+	color: white;
+	font-size: 8vw;
+}
+
+#chaopiao{
+	position: absolute;
+	bottom: 2%;left:19% ;
+	width: 60%;height: 40%;
+}
+.moneymove{
+	position: absolute;
+	bottom: 2%;left:19% ;
+	width: 60%;height: 40%;
+	-webkit-animation:move  0.5s linear  ; 	
+}
+@-webkit-keyframes move{
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    
+    100%{
+        -webkit-transform: translateY(-300%);
+        transform: translateY(-300%);
+    }
+}
+
+#foot{
+	position: absolute;
+	bottom: 0;
+	width: 100%;height: 20%;
+}
+#shou{
+	position: absolute;
+	bottom:23%;right: 2%;
+	width: 37%;height: 13%;
+	-webkit-animation:anni  0.5s linear infinite ; 
+}
+@-webkit-keyframes anni{
+		0%{
+			transform: translateY(0);
+		}
+		25%{
+			transform: translateY(40%);
+		}
+		50%	{
+			transform: translateY(0);
+		}
+		75%	{
+			transform: translateY(-40%);
+		}
+		100%{
+			transform: translateY(0%);
+		}
+	}
