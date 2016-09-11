@@ -1,0 +1,352 @@
+<!--html5shiv.js解决IE对HTML5脚本的支持问题-->
+<!--respond.min.js解决IE8对媒体查询的支持-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-sacle=1">
+    <title>现代</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--[if lt IE 9]-->
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <style>
+     /*导航条的 navbar-fixed-top固定遮盖住内容*/
+        body{
+            padding-top: 50px;
+            color: #5a5a5a;
+            padding-bottom: 50px;
+        }
+         .carousel{
+             height: 500px;
+             margin-bottom: 60px;
+         }
+         .carousel .item{
+             height: 500px;
+             background-color: #000;
+         }
+         .carousel .item img{
+             width: 100%;
+         }
+
+         .carousel-caption p {
+             margin-bottom: 20px;
+             font-size: 20px;
+             line-height: 1.8;
+         }
+        #summary-containter .col-md-4{
+            text-align: center;
+        }
+        hr .divider{
+            margin: 40px 0;
+        }
+
+        /*标题样式*/
+        .feature{
+            padding: 30px 0;
+        }
+     .feature-heading{
+         font-size: 50px;
+         color: #2a6496;
+         margin-top: 120px;
+     }
+     .feature-heading .text-muted{
+        font-size: 28px;
+
+     }
+
+     @media (max-width: 800px) {
+         .carousel {
+             height: 300px;
+             margin-bottom: 30px;
+         }
+         .carousel .item {
+             height: 300px;
+         }
+         .carousel img {
+             min-height: 300px;
+         }
+     }
+
+    #summary-containter .row .col-md-4 img{
+    	width: 60%;
+    }
+    </style>
+</head>
+<body>
+<!--navbar-fixed-top 可以让导航条固定在顶部 navbar-inverse导航条为黑色背景-->
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <!--container为居中, container-fluid自适应-->
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-avbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="demo-avbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">综述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#tab-Lamborghini">Lamborghini</a></li>
+                        <li><a href="#tab-Maserati">Maserati</a></li>
+                        <li><a href="#tab-BMW">BMW</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#tab-AstonMartin">AstonMartin</a></li>
+                        <li><a href="#tab-benz">benz</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="用户名...">
+                    <input type="text" class="form-control" placeholder="密码...">
+                </div>
+                <button type="submit" class="btn btn-default">登录</button>
+            </form>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<!--轮播图-->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="http://www.pp3.cn/uploads/allimg/111212/104530E58-10.jpg" alt="">
+            <div class="carousel-caption">
+                <h1>BOM</h1>
+
+                <p>BMW的蓝白标志宝马总部所在地巴伐利亚州州旗的颜色。百年来，宝马汽车由最初的一家飞机引擎生产厂发展成为以高级轿车为主导，并生产享誉全球的飞机引擎、越野车和摩托车的企业集团，名列世界汽车公司前列。宝马也被译为“巴依尔”。</p>
+
+                <p><a class="btn btn-lg btn-primary" href="http://www.bmw.com.cn/"
+                      role="button" target="_blank">跳转官网</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://img5.imgtn.bdimg.com/it/u=4232984733,1500794580&fm=21&gp=0.jpg" alt="">
+            <div class="carousel-caption">
+                <h1>梅赛德斯-奔驰</h1>
+                <p>奔驰，德国汽车品牌，被认为是世界上最成功的高档汽车品牌之一，其完美的技术水平、过硬的质量标准、推陈出新的创新能力、以及一系列经典轿跑车款式令人称道。</p>
+
+                <p><a class="btn btn-lg btn-primary" href="http://www.mercedes-benz.com.cn/"
+                      role="button" target="_blank">跳转官网</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://img5.imgtn.bdimg.com/it/u=3557627588,693353529&fm=21&gp=0.jpg" alt="">
+            <div class="carousel-caption">
+                <h1>AstonMartin</h1>
+
+                <p>阿斯顿·马丁（AstonMartin）公司设在英国盖顿，生产敞篷旅行车、赛车和限量生产的跑车。建于1913年，创始人是莱昂内尔·马丁和罗伯特·班。</p>
+
+                <p><a class="btn btn-lg btn-primary" href="http://www.astonmartin.com/zh/aston-martin"
+                      role="button" target="_blank">跳转官网</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1209/18/c1/13927282_1347950190107.jpg" alt="">
+            <div class="carousel-caption">
+                <h1>玛莎拉蒂</h1>
+
+                <p>玛莎拉蒂（Maserati）是一家意大利豪华汽车制造商，1914年12月1日成立于博洛尼亚（Bologna），公司总部现设于摩德纳（Modena），品牌的标志为一支三叉戟。1993年菲亚特（Fiat S.p.A.）收购玛莎拉蒂，但品牌得以保留。</p>
+
+                <p><a class="btn btn-lg btn-primary" href="http://www.maserati.com.cn/"
+                      role="button" target="_blank">跳转官网</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="http://img2.imgtn.bdimg.com/it/u=2768344442,2678346910&fm=21&gp=0.jpg" alt="">
+            <div class="carousel-caption">
+                <h1>兰博基尼</h1>
+
+                <p>兰博基尼（Automobili Lamborghini S.p.A.）（粤港地区称之为林宝坚尼，台湾地区则将其译为蓝宝坚尼或蓝宝基尼）全球顶级跑车制造商及欧洲奢侈品标志之一，公司坐落于意大利圣亚加塔·波隆尼（Sant'Agata Bolognese），由费鲁吉欧·兰博基尼在1963年创立。早期由于经营不善，于1980年破产；数次易主后，1998年归入奥迪旗下，现为大众集团（Volkswagen Group）旗下品牌之一。</p>
+
+                <p><a class="btn btn-lg btn-primary" href="https://www.lamborghini.com/en-en/"
+                      role="button" target="_blank">跳转官网</a></p>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+<!--内容-->
+<div class="container" id="summary-containter">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-circle" src="http://imgsrc.baidu.com/forum/pic/item/d043ad4bd11373f00cd13a31a40f4bfbfaed04b5.jpg" alt="chrome">
+
+            <h2>兰博基尼</h2>
+
+            <p>兰博基尼（Automobili Lamborghini S.p.A.）（粤港地区称之为林宝坚尼，台湾地区则将其译为蓝宝坚尼或蓝宝基尼）全球顶级跑车制造商及欧洲奢侈品标志之一。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="http://www.blogcdn.com/cn.autoblog.com/media/2010/07/37427861090astn420010.jpg" alt="firefox">
+
+           <h2>玛莎拉蒂</h2>
+
+           <p>玛莎拉蒂（Maserati）是一家意大利豪华汽车制造商，1914年12月1日成立于博洛尼亚（Bologna），公司总部现设于摩德纳（Modena），品牌的标志为一支三叉戟。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="http://www.sinaimg.cn/qc/cz/photo/idx/2009/0303/1236078348_mnJa7U.jpg" alt="safari">
+
+            <h2>AstonMartin</h2>
+
+            <p>阿斯顿·马丁（AstonMartin）公司设在英国盖顿，生产敞篷旅行车、赛车和限量生产的跑车。建于1913年，创始人是莱昂内尔·马丁和罗伯特·班。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我下载</a></p>
+
+        </div>
+    </div>
+    <hr class="divider">
+
+<!--选项栏-->
+    <ul class="nav nav-tabs" role="tablist" id="tab-list">
+        <li class="active"><a href="#tab-Lamborghini " role="tab" data-toggle="tab">兰博基尼</a></li>
+        <li><a href="#tab-Maserati" role="tab" data-toggle="tab">玛莎拉蒂</a></li>
+        <li><a href="#tab-BMW" role="tab" data-toggle="tab">BMW</a></li>
+        <li><a href="#tab-AstonMartin" role="tab" data-toggle="tab">阿斯顿马丁</a></li>
+        <li><a href="#tab-benz" role="tab" data-toggle="tab">奔驰</a></li>
+    </ul>
+<!--选项栏内容-->
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-Lamborghini">
+            <div class="row feature">
+                <div class="col-md-7">
+                    <h2 class="feature-heading">兰博基尼 <span
+                            class="text-muted">科技感强</span></h2>
+                    <p class="lead">兰博基尼（Automobili Lamborghini S.p.A.）（粤港地区称之为林宝坚尼，台湾地区则将其译为蓝宝坚尼或蓝宝基尼）全球顶级跑车制造商及欧洲奢侈品标志之一。</p>
+                </div>
+                <div class="col-md-5">
+                <img class="feature-image img-responsive" src="http://img5.imgtn.bdimg.com/it/u=964463895,3070592816&fm=21&gp=0.jpg"
+                     alt="Lamborghini">
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane " id="tab-Maserati">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="http://tupian.enterdesk.com/2012/0910/zyz/03/mashaladi%20%2813%29.jpg"
+                         alt="Maserati">
+                </div>
+                <div class="col-md-7">
+
+                <h2 class="feature-heading">玛莎拉蒂 <span class="text-muted">波塞冬的叉子</span>
+                </h2>
+
+                <p class="lead">玛莎拉蒂（Maserati）是一家意大利豪华汽车制造商，1914年12月1日成立于博洛尼亚（Bologna），公司总部现设于摩德纳（Modena），品牌的标志为一支三叉戟。</p>
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane " id="tab-BMW">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">BMW <span class="text-muted">良驹配英雄</span></h2>
+
+                    <p class="lead">BMW的蓝白标志宝马总部所在地巴伐利亚州州旗的颜色。百年来，宝马汽车由最初的一家飞机引擎生产厂发展成为以高级轿车为主导，并生产享誉全球的飞机引擎、越野车和摩托车的企业集团，名列世界汽车公司前列。宝马也被译为“巴依尔”。</p>
+                </div>
+                <div class="col-md-5">
+                <img class="feature-image img-responsive" src="http://img1.imgtn.bdimg.com/it/u=3354340133,3739582716&fm=21&gp=0.jpg"
+                     alt="BMW">
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane " id="tab-AstonMartin">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="http://img0.imgtn.bdimg.com/it/u=2527305579,1380478365&fm=21&gp=0.jpg"
+                         alt="AstonMartin">
+                </div>
+                <div class="col-md-7">
+
+                <h2 class="feature-heading">阿斯顿马丁 <span class="text-muted">个人喜爱</span>
+                </h2>
+
+                <p class="lead">阿斯顿·马丁（AstonMartin）公司设在英国盖顿，生产敞篷旅行车、赛车和限量生产的跑车。建于1913年，创始人是莱昂内尔·马丁和罗伯特·班。</p>
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane " id="tab-benz">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">奔驰 <span class="text-muted">大众奔驰</span></h2>
+
+                    <p class="lead">奔驰，德国汽车品牌，被认为是世界上最成功的高档汽车品牌之一，其完美的技术水平、过硬的质量标准、推陈出新的创新能力、以及一系列经典轿跑车款式令人称道。</p>
+                </div>
+                <div class="col-md-5">
+                <img class="feature-image img-responsive" src="http://img3.imgtn.bdimg.com/it/u=3710060968,1846563261&fm=21&gp=0.jpg"
+                     alt="benz">
+            </div>
+            </div>
+        </div>
+    </div>
+    <hr class="divider">
+    <!--底部-->
+    <footer>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+        <p >在这里可以插入公司的版权之类的啥啥啥吧</p>
+    </footer>
+
+</div>
+
+<!--弹出框-->
+<div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span
+                        aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h4 class="modal-title" id="modal-label">关于</h4>
+            </div>
+            <div class="modal-body">
+                <p>前端工程师的职责是制作标准优化的代码，并增加交互动态功能，开发JavaScript以及Flash模块，同时结合后台开发技术模拟整体效果，进行丰富互联网的Web开发，致力于通过技术改善用户体验。</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">原来如此</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#demo-avbar .dropdown-menu a").click(function(){
+            var href = $(this).attr("href");
+            $("#tab-list a[href='"+href+"' ]").tab('show');
+        })
+    })
+</script>
+</body>
+</html>
