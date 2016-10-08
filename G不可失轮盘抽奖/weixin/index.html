@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<script type="text/javascript" src="js/jquery-2.1.3.js"></script>
+	<script type="text/javascript" src="js/awardRotate.js"></script>
+	<script type="text/javascript" src = "js/turnplate.js"></script>
+	<script type="text/javascript" src="js/touch.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<img src="img/logo.png" alt="" id="logo">
+		<img src="img/bg1.jpg" style="visibility: hidden;">
+		<div id="page1" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="section-1"><img src="img/page_2_1.png"></div>
+			<div class="section-2">
+				<img src="img/page_1_1.png">
+				<div id="processBar">
+					<!-- <img src="img/page_1_2.png"> -->
+					<img id ="dot" src="img/dot.png">
+					<span>0%</span>
+				</div>
+			</div>
+		</div>
+
+		<div id="page2" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="section-1  animated slideInUp">
+				<img src="img/page_2_1.png">
+			</div>
+			<div class="section-2 animated flash">
+				<img src="img/page_2.png">
+			</div>
+			<div class="next_page">
+				<img src="img/arrow.png">
+			</div>
+		</div>
+		<div id="page3" class="page">
+			<img src="img/bg.jpg" class="bg">
+			<div class="topic-title animated slideInLeft">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-2 animated slideInRight">
+				<img src="img/page_3_1.png">
+			</div>
+			<div id="videoBox">
+				<video id="video" src="video/video.mp4" preload = "auto"></video>
+				<img src="img/page_3_5.png" data-src="img/page_3_2.png" id="playBtn">
+			</div>
+			<div id="tips" class=" animated pulse">
+				<img src="img/page_3_3.png">
+			</div>
+			<div class="next_page">
+				<img src="img/arrow.png">
+			</div>
+		</div>
+		<div id="page4" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="topic-title animated slideInLeft">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-1 animated slideInRight">
+				<img src="img/page_4_1.png">
+			</div>
+			<div class="section-2 bounce">
+				<img src="img/page_4_2.png">
+			</div>
+			<div id="actionDetails">
+				<img src="img/active_detail.png">
+			</div>
+		</div>
+		<div id="page5" class="page">
+			<img src="img/bg2.jpg" class="bg">
+			<div class="topic-title animated slideInUp">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-1">
+				<img src="img/page_5_1.png">
+			</div>
+			<div id="backBtn">
+				<img src="img/page_5_2.png">
+			</div>
+		</div>
+		<div id="page6" class="page">
+			<img src="img/bg3.jpg" class="bg">
+			<div class="topic-title animated slideInLeft">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-1 animated slideInRight">
+				<img src="img/page_6_1.png">
+			</div>
+			<div class="section-2 bounce">
+				<img src="img/page_6_2.png">
+			</div>
+			<!-- <div class="buying-button">
+				<img src="img/page_6_3.png">
+			</div> -->
+		</div>
+		<div id="page7" class="page">
+			<img src="img/bg4.jpg" class="bg">
+			<div class="topic-title animated slideInLeft">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-1 animated slideInRight">
+				<img src="img/page_7_1.png">
+			</div>
+			<div class="section-2 bounce">
+				<img src="img/page_7_2.png">
+			</div>
+			<!-- <div class="buying-button">
+				<img src="img/page_6_3.png">
+			</div> -->
+		</div>
+		<div id="page8" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="topic-title animated slideInLeft">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="section-1 animated slideInRight">
+				<img src="img/page_8_1.png">
+			</div>
+			<div class="section-2 animated pulse2">
+				<img src="img/page_8_2.png">
+			</div>
+			<div class="buying-button">
+				<img src="img/page_6_3.png">
+			</div>
+		</div>
+		<div id="page9" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="topic-title animated slideInUp">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div class="banner">
+				<div class="turnplate">
+					<canvas class="item" id="wheelcanvas" width="422px" height="422px"></canvas>
+					<img class="pointer" src="img/turnplate-pointer.png"/ id="pointer">
+				</div>
+			</div>
+			<div id="start">
+				<img src="img/page_9.png" alt="">
+			</div>
+		</div>
+		<!-- 中奖弹窗 -->
+		<div id="page10" class="page">
+			<img src="img/bg1.jpg" class="bg">
+			<div class="topic-title">
+				<img src="img/min_miss.png" alt="">
+			</div>
+			<div id="awardBox">
+				<img src="img/prize02.png" style="display: none;">
+				<img src="img/prize03.png" style="display: none;">
+				<div class="section-1"><img src="img/prize01.png"></div>
+				<form action="" method="post">
+					<div class="input-group">
+						<img src="img/name.png">
+						<input type="text" id="username">
+					</div>
+					<div class="input-group">
+						<img src="img/phone.png">
+						<input type="tel" id="userphone">
+					</div>
+					<a href="javascript:void(0);" id="submitBtn">
+						<img src="img/submit_button.png">
+					</a>
+				</form>
+			</div>
+			<div id="shareBox">
+				<div class="section-1">
+					<img src="img/noprize.png">
+				</div>
+				<a href="javascript:void(0);" id="shareBtn">
+					<img src="img/share_btn.png">
+				</a>
+			</div>
+			<div id="shareMask">
+				<img src="img/share_tips.png">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	//图片预加载
+	var pageOneArr = [];
+	var pageOneNum = 0;
+	for(var i = 0,len = $("#page1 img").length; i < len;i++) {
+		pageOneArr[i] = new Image();
+		pageOneArr[i].onload = function() {
+			pageOneNum++;
+			if(pageOneNum == len) {
+				// alert("yes" + len)
+				$("#page1").show();
+				$("#logo").show();
+			}
+		}
+		pageOneArr[i].src = $("#page1 img").eq(i).attr("src");
+	}
+
+	var pageAllArr = [];
+	var pageAllNum = 0; 
+	for(var i = 0,lenAll = $(".page img").length; i < lenAll;i++) {
+		pageAllArr[i] = new Image();
+		pageAllArr[i].onload = function() {
+			pageAllNum++;
+			var percent = parseInt((pageAllNum / lenAll) * 100);
+			// console.log(percent)
+			if(percent > 6) {
+				$("#processBar").width(percent + "%");
+				// $("#processBar").animate({
+				// 	width:percent + "%"
+				// },1000);
+			}
+			$("#processBar span").html(percent + "%");
+			if(pageAllNum == lenAll) {
+				$("#page1").hide();
+				$("#page2").show();
+				touch.on($("#page2"), 'swipeup', function(ev){
+					$("#page2").hide();
+					$("#page3").show();
+					var _height = Math.floor($("#playBtn").height()*9/17);
+					$("#video").height(_height);
+					$("#video").css("top",($("#playBtn").height()-_height)/2);
+					ev.stopPropagation();
+					return false;
+				});
+				touch.on($("#page2"), 'touchstart', function(ev){
+					ev.preventDefault();
+				});
+			}
+		}
+		pageAllArr[i].src = $(".page img").eq(i).attr("src");
+	}
+	
+
+	function $$(id) {return document.getElementById(id);}
+	//视频播放
+	var video = $$("video");
+	$("#playBtn").click(function() {
+		var _src = $(this).attr("data-src");
+		$(this).attr("src",_src);
+		// $(this).hide();
+		video.style.zIndex = 10;
+		video.play();
+		// video.webkitRequestFullScreen();
+		//视频播放结束
+		// video.onended = function() {
+		// 	$("#page3").hide();
+		// 	$("#page4").show();
+		// }
+	})
+	window.onresize = window.ondeviceorientation= function() {
+		var _height = Math.floor($("#playBtn").height()*9/17);
+		$("#video").height(_height);
+		$("#video").css("top",($("#playBtn").height()-_height)/2);
+	}
+	//
+	touch.on($("#page3"), 'swipeup', function(ev){
+		video.pause();
+		$("#page3").hide();
+		$("#page4").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page3"), 'swipedown', function(ev){
+		$("#page3").hide();
+		$("#page2").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page4"), 'swipedown', function(ev){
+		$("#page4").hide();
+		$("#page3").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page5"), 'swipedown', function(ev){
+		$("#page5").hide();
+		$("#page4").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page6"), 'swipedown', function(ev){
+		$("#page6").hide();
+		$("#page4").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page7"), 'swipedown', function(ev){
+		$("#page7").hide();
+		$("#page6").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page8"), 'swipedown', function(ev){
+		$("#page8").hide();
+		$("#page7").show();
+		ev.stopPropagation();
+		return false;
+	});
+	touch.on($("#page9"), 'swipedown', function(ev){
+		$("#page9").hide();
+		$("#page8").show();
+		ev.stopPropagation();
+		return false;
+	});
+	//活动规则
+	$("#actionDetails").click(function(){
+		$("#page4").hide();
+		$("#page5").show();
+	})
+
+	//返回
+	$("#backBtn").click(function() {
+		$("#page5").hide();
+		$("#page4").show();
+	})
+	//开启一重豪礼
+	$("#page4 .section-2").click(function() {
+		$("#page4").hide();
+		$("#page6").show();
+	})
+	//开启二重豪礼
+	$("#page6 .section-2").click(function() {
+		$("#page6").hide();
+		$("#page7").show();
+	})
+	//开启三重豪礼
+	$("#page7 .section-2").click(function() {
+		$("#page7").hide();
+		$("#page8").show();
+	})
+
+	//激情抢购
+	$(".buying-button").click(function() {
+		$(".page").hide();
+		$("#page9").show();
+		$(".banner .turnplate").height($(".banner .turnplate").width());//转盘高度等于宽度
+	})
+
+	//分享
+	$("#shareBtn").click(function() {
+		$("#shareMask").show();
+	})
+	$("#shareMask").click(function() {
+		$(this).hide();
+	})
+
+	//中奖提交分享
+	$("#submitBtn").click(function() {
+		$("#shareMask").show();
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+body,html {
+	background-color: rgb(0,0,0);
+}
+#wrap {
+	position: relative;
+	z-index: 1;
+	overflow-x:hidden;
+}
+#logo {
+	display: none;
+	position: absolute;
+	top:12px;
+	left:0;
+	width:100%;
+	z-index: 10;
+}
+
+.page {
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.page .bg{
+	position: absolute;
+	z-index: -1;
+	width:100%;
+	left:0;
+	top:0;
+}
+.page .topic-title {
+	width:46.875%;
+	margin:12% auto 0;
+}
+#page1,#page2, #page10,#page3,#page4,#page5,#page6,#page7,#page8,#page9 {
+	display: none;
+}
+#page1 .section-1 {
+	width:100%;
+	margin:15% auto 0;
+}
+#page1 .section-2 {
+	width:73.125%;
+	margin:8% auto 0;
+	position: relative;
+}
+#processBar {
+	width:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	width:6%;
+	height: 100%;
+	background: url(../img/page_1_2.png) no-repeat;
+	background-size: cover;
+}
+#processBar span{
+	position: absolute;
+	top:-14px;
+	right:-8px;
+	color:#fff;
+}
+#processBar img {
+	position: absolute;
+	right: -1px;
+	height: 100%;
+	width:auto;
+}
+#page2 .section-1 {
+	width:100%;
+	margin:15% auto 0;
+}
+#page2 .section-2 {
+	width:65%;
+	margin:0 auto;
+}
+.next_page{
+	position: fixed;
+    z-index: 1;
+    margin:0 auto;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom:5px;
+}
+#page3 .section-2 {
+	width:68%;
+	margin: -20% auto 0;
+}
+#page3 #videoBox {
+	width:80%;
+	width:80vw;
+	height: 80vw;
+	margin:-9% auto 8.25%;
+	position: relative;
+	text-align: center;
+}
+#playBtn {
+	width:100%;
+	height: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+#page3 #videoBox video {
+	position: absolute;
+	left:3%;
+	width: 94%;
+	height: 100%;
+	margin:0 auto;
+}
+#page3 #tips {
+	width:55%;
+	margin-left: 6.25%;
+	margin-top: -7%;
+}
+#page4 .section-1 {
+	width:78.6%;
+	margin:-8% auto 4%;
+}
+#page4 .section-2 {
+	width:44%;
+	margin:0 auto;
+	/*position: absolute;
+	left: 50%;
+	margin-left:-22%; */
+}
+#page4 #actionDetails {
+	width:42.8125%;
+	margin:0 auto;
+	margin-top: 4%;
+}
+#page5 .section-1 {
+	margin-top: -10%;
+}
+#page5 #backBtn {
+	width:30.625%;
+	margin: -4% auto 0;
+}
+
+#page6 .section-1 {
+	width:78.6%;
+	margin:-8% auto 4%;
+}
+#page6 .section-2 {
+	width:44%;
+	margin:0 auto;
+}
+#page6 .buying-button{
+	width:42.8125%;
+	margin:0 auto;
+}
+
+#page7 .section-1 {
+	width:78.6%;
+	margin:-8% auto 4%;
+}
+#page7 .section-2 {
+	width:44%;
+	margin:0 auto;
+}
+#page7 .buying-button{
+	width:42.8125%;
+	margin:0 auto;
+}
+
+#page8 .section-1 {
+	width:78.6%;
+	margin:-16% auto 0;
+}
+#page8 .section-2 {
+	width:92.2%;
+	margin:0 0 0 7.8%;
+}
+#page8 .buying-button{
+	width:42.8125%;
+	margin:0 auto;
+}
+
+#page9 #start {
+	width:48.5%;
+	margin:7.8125% auto 0;
+}
+
+/* 大转盘样式 */
+.banner .turnplate{display:block;width:70%;height:70%;width:70vw;height:70vw;margin:0 auto;position:relative;background-color:#6c040b;border-radius: 50%;}
+.banner .turnplate canvas.item{width:100%;}
+.banner .turnplate img.pointer{position:absolute;width:8.5%;left:46%;top:14%;}
+
+
+#awardBox {
+	position: absolute;
+	padding-top: 16px;
+	padding-bottom: 5px;
+	width:75%;
+	left:12.5%;
+	top:22%;
+	border-radius: 10px;
+	background-color: #de0819;
+	display: none;
+	/*background: url(../img/game_bg.png) no-repeat;*/
+}
+input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+}
+#awardBox .section-1 {
+	width:76.56%;
+	margin:0 auto;
+}
+#awardBox .input-group {
+	position: relative;
+	width:88%;
+	margin:14px auto;
+}
+#awardBox .input-group input {
+	position: absolute;
+	height: 100%;
+	left:28.6%;
+	top:0;
+}
+#submitBtn,#shareBtn{
+	display: block;
+	width:57.32%;
+	margin:0 auto;
+}
+#shareBox
+{	
+	position: absolute;
+	padding:6% 0;
+	width:75%;
+	left:12.5%;
+	top:28%;
+	border-radius: 10px;
+	background-color: #de0819;
+}
+#shareBox .section-1 {
+	width:74%;
+	margin:0 auto 5%;
+}
+#shareMask {
+	display: none;
+	position: fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.8);
+}
